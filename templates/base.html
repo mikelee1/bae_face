@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block title %}{% endblock %}</title>
+	{% block seo %}
+	<meta name="description" content="该网站为用于记录学习和生活的心得" />
+	<meta name="keywords" content="李原野,个人博客,Geek" />
+	{% endblock %}
+	<meta name="robots" content="index,follow" />
+	<meta name="author" content="李原野" />
+	<meta http-equiv="content-Type" content="text/html;charset=utf8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<meta name="baidu-site-verification" content="lplLbq63Lo" />
+
+
+
+	{% load compress %}
+	{% compress css %}
+	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/index.css">
+	{% endcompress %}
+
+
+
+</head>
+<body>
+{% include "header.html" %}
+<script type="text/javascript" src="/static/js/circle.js"></script>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 col-md-10 col-md-offset-1 col-sm-12 remove_padding">
+
+				<div id="head_img">
+					<img src="/static/img/banner.jpg"/>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-lg-12 col-md-10 col-md-offset-1 col-sm-12 hidden-xs remove_padding">
+				{% block navibar %}
+				<nav class="navbar navbar-inverse" role="navigation" id="navibar">
+				      <ul class="nav navbar-nav">
+				         <li><a href="/">首页</a></li>
+				         <li><a href="/geek">技术博客</a></li>
+				         <li><a href="/essay">随笔</a></li>
+				         <li><a href="/joke">吐槽</a></li>
+				      </ul>
+				</nav>
+				{% endblock %}
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-8 col-md-7 col-md-offset-1  col-sm-8 remove_padding">
+
+				<div id="timeline">
+				 {% block title_list %}
+					
+			       {% endblock %}
+
+			     {% block pagenation %}
+
+			     {% endblock %}
+
+				</div>
+			</div>
+		
+			<div class="col-lg-4 col-md-3 col-sm-4 remove_padding">
+				
+				<div id="right_column">
+
+					<div id="latest">
+						<h4><span class="glyphicon glyphicon-time"></span>&nbsp;最近文章</h4>
+						<hr class="right_hr"/>
+						<ol>
+							{% block lastest_blog%}
+										
+							{% endblock %}
+						</ol>
+					</div>
+							
+					<div id="tags">	
+						<h4><span class="glyphicon glyphicon-tags"></span>&nbsp;&nbsp;标签</h4>
+						<hr class="right_hr" />
+						{% block tags %}
+										
+						{% endblock %}
+									
+					</div>
+
+					<div id="friends">	
+						<h4><span class="glyphicon glyphicon-heart-empty"></span>&nbsp;友情链接</h4>
+						<hr class="right_hr"/>
+						{% block friends %}
+										
+						{% endblock %}
+									
+					</div>		
+				</div>					
+			</div>
+		</div>
+	
+		<div class="row">
+				<div class="col-lg-12 col-md-10 col-md-offset-1 col-sm-12 hidden-xs remove_padding">
+					{% include "footer.html" %}
+				</div>
+		</div>
+	
+	</div>
+
+	<div id="return_top" class="hidden-sm hidden-xs"><a href="#"><img src="/static/img/return_top.png" /></a>
+	</div>
+
+	{% compress js %}
+	<script src="/static/js/jquery-1.11.3.min.js"></script>
+	<script src="/static/js/bootstrap/bootstrap.min.js"></script>
+	<script src="/static/js/main.js"></script>
+	{% endcompress%}
+
+</body>
+</html>
