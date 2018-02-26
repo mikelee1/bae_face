@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+<head>
+{% load staticfiles %}
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-33848682-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag() {
+  window.dataLayer.push(arguments);
+}
+gtag('js', new Date());
+gtag('config', 'UA-33848682-1');
+</script>
+<meta charset="utf-8">
+<meta name="description" content="Simplest possible examples of HTML, CSS and JavaScript.">
+<meta name="author" content="//samdutton.com">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta itemprop="name" content="simpl.info: simplest possible examples of HTML, CSS and JavaScript">
+<!--<meta itemprop="image" content="/images/icons/icon192.png">-->
+<meta id="theme-color" name="theme-color" content="#fff">
+<!--<link rel="icon" href="/images/icons/icon192.jpg">-->
+<base target="_blank">
+<title>getUserMedia</title>
+<!--<link rel="stylesheet" href="../css/main.css">-->
+  <style>
+    video {
+      object-fit: cover;
+    }
+
+    @media (min-width: 1000px) {
+      video {
+        height: 480px;
+      }
+    }
+  </style>
+
+
+</head>
+<body>
+  <div id="container">
+    <video autoplay></video>
+  </div>
+  <script src="{% static 'js/webcame.js' %}"></script>
+</body>
+</html>
+
+

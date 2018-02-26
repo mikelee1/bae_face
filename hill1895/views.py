@@ -480,3 +480,7 @@ def invoke_audio(request):
 
 def record(request):
     return render_to_response('record.html')
+
+
+def webcam(request):
+    return render_to_response('webcam.html')
