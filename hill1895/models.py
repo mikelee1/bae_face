@@ -109,10 +109,11 @@ class Friend(models.Model):
     class Meta:
         ordering = ['name']
 
-
+import django.utils.timezone as timezone
 class Message(models.Model):
     receiver = models.FileField(name='img')
     audio = models.FileField(name='audio')
+    time = models.DateTimeField(name='date',default = timezone.now)
 
 
 class People(models.Model):

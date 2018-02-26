@@ -250,21 +250,24 @@ def face(request):
     if request.method == 'POST':
 
         form = UploadFileForm(request.POST, request.FILES)
-        # b = request.FILES.get('file')
-        a = request.FILES['file']
+        a = request.FILES['imgpath']
         b = request.FILES['audio']
-        with open(cwd+'/mysite/'+a._name,'wb') as f1:
+        name = request.POST['receivername']
+        with open(cwd+'/mysite/'+name,'wb') as f1:
             for i in a.chunks():
                 f1.write(i)
         with open(cwd+'/mysite/'+b._name,'wb') as f2:
             for i in b.chunks():
                 f2.write(i)
-        receiver = Message(img = a._name.split('.')[0],audio =cwd+'/mysite/'+b._name )
-        person = People(name = a._name.split('.')[0])
-        person.save()
+        receiver = Message(img = name,audio =cwd+'/mysite/'+b._name )
         receiver.save()
 
-
+        personcheck = People.objects.filter(name = name)
+        if personcheck:
+            pass
+        else:
+            person = People(name = name)
+            person.save()
 
         return HttpResponseRedirect('/face')
     else:
@@ -300,29 +303,6 @@ def invoke_camera(request):
         known_face_encodings.append(obama_face_encoding)
         known_face_names.append(i.name)
 
-
-    # # Load a sample picture and learn how to recognize it.
-    # obama_image = face_recognition.load_image_file(cwd+"/mysite/obama.jpg")
-    # obama_face_encoding = face_recognition.face_encodings(obama_image)[0]
-    #
-    # # Load a second sample picture and learn how to recognize it.
-    # biden_image = face_recognition.load_image_file(cwd+"/mysite/biden.jpg")
-    # biden_face_encoding = face_recognition.face_encodings(biden_image)[0]
-    #
-    # lee_image = face_recognition.load_image_file(cwd+"/mysite/lee.jpg")
-    # lee_face_encoding = face_recognition.face_encodings(lee_image)[0]
-    #
-    # # Create arrays of known face encodings and their names
-    # known_face_encodings = [
-    #     obama_face_encoding,
-    #     biden_face_encoding,
-    #     lee_face_encoding
-    # ]
-    # known_face_names = [
-    #     "Barack Obama",
-    #     "Joe Biden",
-    #     "lee mike"
-    # ]
 
     # Initialize some variables
     face_locations = []
@@ -497,3 +477,6 @@ def invoke_audio(request):
     #                               'tags':tags,
     #                               'message':randomstr
     #                           },context_instance=RequestContext(request))
+
+def record(request):
+    return render_to_response('record.html')

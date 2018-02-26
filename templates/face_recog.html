@@ -55,15 +55,14 @@
          <div id="content">
              {{message}}
             <form method="POST" enctype="multipart/form-data">{% csrf_token %}
-              上传收信人图片：<input type="file" name="file">
-                {% if message %}
-                上传音频文件withmess：<input type="file" name="audio" value=message>
-                {% else %}
+              上传收信人图片：<input type="file" name="imgpath">
+                收信人姓名：<input type="text" name="receivername"><br/>
+
                 上传音频文件：<input type="file" name="audio">
-                {% endif%}
+
               <input type="submit" value="提交">
             </form>
-             <a href="invoke_audio">点我录音</a>
+             <a href="record">点我录音</a>
              <a href="invoke_camera">看看有没有消息</a>
          </div>	 
 
