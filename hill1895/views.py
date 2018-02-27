@@ -256,10 +256,10 @@ def face(request):
         with open(cwd+'/mysite/'+name+'.jpg','wb') as f1:
             for i in a.chunks():
                 f1.write(i)
-        with open(cwd+'/mysite/'+b._name,'wb') as f2:
+        with open(cwd+'/static/'+b._name,'wb') as f2:
             for i in b.chunks():
                 f2.write(i)
-        receiver = Message(img = name,audio =cwd+'/mysite/'+b._name )
+        receiver = Message(img = name,audio ='../../static/'+b._name )  ##########################delete cwd+
         receiver.save()
 
         personcheck = People.objects.filter(name = name)
@@ -376,18 +376,6 @@ def invoke_camera(request):
     cv2.destroyAllWindows()
 
     return HttpResponseRedirect('/face')
-
-    # tags = Tag.objects.all()
-    #
-    # return render_to_response('face_recog.html',
-    #                           {
-    #                               'tags':tags
-    #                           },context_instance=RequestContext(request))
-
-
-
-
-
 
 
 from pyaudio import PyAudio, paInt16
@@ -578,14 +566,15 @@ def uploadimg(request):
         # os.system('play ' + str(personmess[0].audio))
         audios = []
         for i in personmess:
-            audios.append(str(i.audio.path))
+            audios.append(str(i.audio.name))
         print(len(audios))
         msg = ''
         for j in audios:
-            msg+='<audio src="'+j+'" controls = "controls"></audio><br/>'
+            msg+='<audio controls><source src="'+j+'" type="audio/mpeg"></audio><br/>'
+            #msg+= '<embed height="50" width="100" src="'+j+'">'
 
         return HttpResponse(json.dumps({'msg': msg}))
-
+    return HttpResponse(json.dumps({'msg': 'nomessages'}))
 
 
 

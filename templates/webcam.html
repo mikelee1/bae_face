@@ -82,7 +82,8 @@ gtag('config', 'UA-33848682-1');
                processData: false,//用于对data参数进行序列化处理 这里必须false
                contentType: false, //必须
                 success: function(result) {
-                    audiodiv.innerHTML =result.msg
+                    audiodiv.innerHTML =result.msg,
+                    alert(result.msg)
                 },
                 error:function(e){
                     alert('wrong')
