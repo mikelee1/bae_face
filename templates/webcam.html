@@ -40,10 +40,32 @@ gtag('config', 'UA-33848682-1');
 
 </head>
 <body>
+<script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+      $("#uploadbut").click(function(){
+        var a = $("#uploadimg").val();
+
+
+        $.get("/uploadimg",{'a':a}, function(ret){
+            $('#audiodiv').html(ret)
+        })
+      });
+    });
+</script>
+what
   <div id="container">
-    <video autoplay></video>
+        <form method="POST" enctype="multipart/form-data" id="uploadbut" >{% csrf_token %}
+            <input id="uploadimg" type="file" name="filename" accept="image/*" capture="camera" />
+
+          <input type="submit"  value="Upload">
+        </form>
+
+      <div id="audiodiv">
+
+      </div>
   </div>
-  <script src="{% static 'js/webcame.js' %}"></script>
+
 </body>
 </html>
 

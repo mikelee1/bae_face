@@ -1,71 +1,35 @@
-/*
-
-Copyright 2017 Google Inc.
-
-
-
-Licensed under the Apache License, Version 2.0 (the "License");
-
-you may not use this file except in compliance with the License.
-
-You may obtain a copy of the License at
-
-
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-
-
-Unless required by applicable law or agreed to in writing, software
-
-distributed under the License is distributed on an "AS IS" BASIS,
-
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-
-See the License for the specific language governing permissions and
-
-limitations under the License.
-
-*/
-
-
-
 'use strict';
-
-
-
 var constraints = {
-
-  video: true
-
+  video: true,
+  audio:true
 };
-
-
-
 var video = document.querySelector('video');
-
-
-
+var video1 = document.getElementById('p');
 function handleSuccess(stream) {
-
   window.stream = stream; // only to make stream available to console
-
-  video.srcObject = stream;
-
+//  video.srcObject = stream;
+    if ("srcObject" in video) {
+            video.srcObject = stream
+        } else {
+            video.src = window.URL && window.URL.createObjectURL(stream) || stream
+        }
+  video1.innerHTML = 'aaa';
 }
-
-
-
 function handleError(error) {
-
   console.log('getUserMedia error: ', error);
-
+  video1.innerHTML = 'bbb';
+  alert("error!");
+if (error.PERMISSION_DENIED) {
+alert('用户拒绝了浏览器请求媒体的权限');
+} else if (error.NOT_SUPPORTED_ERROR) {
+alert('对不起，您的浏览器不支持拍照功能，请使用其他浏览器');
+} else if (error.MANDATORY_UNSATISFIED_ERROR) {
+alert('指定的媒体类型未接收到媒体流');
+} else {
+alert('系统未能获取到摄像头，请确保摄像头已正确安装。或尝试刷新页面，重试');
 }
-
-
-
+}
 navigator.mediaDevices.getUserMedia(constraints).
-
   then(handleSuccess).catch(handleError);
 
 
