@@ -246,6 +246,27 @@ def profile(request):
                                })
 
 
+import os  
+import subprocess  
+  
+def amr2mp3(amr_path,mp3_path=None):  
+    path, name = os.path.split(amr_path)  
+    if name.split('.')[-1]!='amr':  
+        print 'not a amr file'  
+        return 0  
+    if mp3_path is None or mp3_path.split('.')[-1]!='mp3':  
+        mp3_path = os.path.join(path, name.split('.')[0] +'.mp3')  
+    error = subprocess.call(['ffmpeg','-i',amr_path,mp3_path])  
+    print error  
+    if error:  
+        return 0  
+    print 'success'  
+    return mp3_path  
+  
+
+
+
+
 def face(request):
     if request.method == 'POST':
 
@@ -259,7 +280,12 @@ def face(request):
         with open(cwd+'/static/'+b._name,'wb') as f2:
             for i in b.chunks():
                 f2.write(i)
-        receiver = Message(img = name,audio ='../../static/'+b._name )  ##########################delete cwd+
+        if b._name.split('.')[1]=='amr':
+            bname = b._name.split('.')[0]+'.mp3'
+            amr2mp3(cwd+'/static/'+b._name)
+        else:
+            bname = b._name
+        receiver = Message(img = name,audio ='../../static/'+bname )  ##########################delete cwd+
         receiver.save()
 
         personcheck = People.objects.filter(name = name)
