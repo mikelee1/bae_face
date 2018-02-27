@@ -4,7 +4,6 @@
 <html lang="en">
 <head>
 {% load staticfiles %}
-<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-33848682-1"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -19,12 +18,10 @@ gtag('config', 'UA-33848682-1');
 <meta name="author" content="//samdutton.com">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta itemprop="name" content="simpl.info: simplest possible examples of HTML, CSS and JavaScript">
-<!--<meta itemprop="image" content="/images/icons/icon192.png">-->
 <meta id="theme-color" name="theme-color" content="#fff">
-<!--<link rel="icon" href="/images/icons/icon192.jpg">-->
 <base target="_blank">
 <title>getUserMedia</title>
-<!--<link rel="stylesheet" href="../css/main.css">-->
+
   <style>
     video {
       object-fit: cover;
@@ -41,30 +38,66 @@ gtag('config', 'UA-33848682-1');
 </head>
 <body>
 <script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<!--<form>-->
+    <!--<p><input type="text" name="username" id="username" placeholder="username"></p>-->
+<!--<button type="submit" id="upload_button">提交</button>-->
+
+<!--</form>-->
+<input id="imgfile" type="file" name="imgfile" accept="image/*" capture="camera" /><br/>
+
+<button id="but" >submit</button>
+<!--<audio src="a" controls="controls">aaa</audio><br/>-->
+<div id="audiodiv"></div>
+<p id="list_result"></p>
+{#注意button标签不要用在form表单中使用#}
+
+
 <script>
-    $(document).ready(function(){
-      $("#uploadbut").click(function(){
-        var a = $("#uploadimg").val();
+
+    $(function(){
+
+       $("#but").click(function(){
+           c=$("#pu").val()
+           d = $("#imgfile").val()
+
+           var fileObj = document.getElementById("imgfile").files[0]; // js 获取文件对象
+           if (typeof (fileObj) == "undefined" || fileObj.size <= 0) {
+               alert("请选择图片");
+               return;
+           }
+           var formFile = new FormData();
+           formFile.append("action", "UploadVMKImagePath");
+           formFile.append("file", fileObj); //加入文件对象
+
+           var data1 = formFile;
+
+            var audiodiv = document.getElementById("list_result");
+           $.ajax({
+                type:"POST",
+                url:"/uploadimg/",
+                dataType:"json",
+                data:data1,
+               cache: false,//上传文件无需缓存
+               processData: false,//用于对data参数进行序列化处理 这里必须false
+               contentType: false, //必须
+                success: function(result) {
+                    audiodiv.innerHTML =result.msg
+                },
+                error:function(e){
+                    alert('wrong')
+                }
+            });
 
 
-        $.get("/uploadimg",{'a':a}, function(ret){
-            $('#audiodiv').html(ret)
-        })
-      });
-    });
+
+       })
+
+    })
+
+
 </script>
-what
-  <div id="container">
-        <form method="POST" enctype="multipart/form-data" id="uploadbut" >{% csrf_token %}
-            <input id="uploadimg" type="file" name="filename" accept="image/*" capture="camera" />
 
-          <input type="submit"  value="Upload">
-        </form>
-
-      <div id="audiodiv">
-
-      </div>
-  </div>
 
 </body>
 </html>

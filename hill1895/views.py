@@ -531,5 +531,66 @@ def webcamera(request):
     else:
         return render_to_response('webcam.html',context_instance=RequestContext(request))
 
-def uploadimg(a):
-    return a
+from django.views.decorators.csrf import csrf_exempt
+import json
+from django.http.response import HttpResponse
+
+@csrf_exempt
+def uploadimg(request):
+    a = request.FILES['file']
+
+
+    persons = People.objects.all()
+    messages = Message.objects.all()
+    known_face_encodings = []
+    known_face_names = []
+    # a = request.FILES['filename']
+    with open(cwd+'/mysite/'+'test.jpg','wb') as f1:
+        for i in a.chunks():
+            f1.write(i)
+    for i in persons:
+        obama_image = face_recognition.load_image_file(cwd + "/mysite/" + i.name + ".jpg")
+        obama_face_encoding = face_recognition.face_encodings(obama_image)[0]
+        known_face_encodings.append(obama_face_encoding)
+        known_face_names.append(i.name)
+
+    terminal = False
+    # Grab a single frame of video
+
+
+    # Only process every other frame of video to save time
+
+    # Find all the faces and face encodings in the current frame of video
+    face_locations = face_recognition.load_image_file(cwd+'/mysite/'+'test.jpg')
+    face_encoding = face_recognition.face_encodings(face_locations)[0]
+
+    face_names = []
+
+    # See if the face is a match for the known face(s)
+    matches = face_recognition.compare_faces(known_face_encodings, face_encoding)
+    name = "Unknown"
+
+    # If a match was found in known_face_encodings, just use the first one.
+    if True in matches:
+        first_match_index = matches.index(True)
+        name = known_face_names[first_match_index]
+        personmess = messages.filter(img=name)
+        # os.system('play ' + str(personmess[0].audio))
+        audios = []
+        for i in personmess:
+            audios.append(str(i.audio.path))
+        print(len(audios))
+        msg = ''
+        for j in audios:
+            msg+='<audio src="'+j+'" controls = "controls"></audio><br/>'
+
+        return HttpResponse(json.dumps({'msg': msg}))
+
+
+
+
+
+
+
+
+
