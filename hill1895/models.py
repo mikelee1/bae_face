@@ -118,3 +118,19 @@ class Message(models.Model):
 
 class People(models.Model):
     name = models.CharField(max_length=50, db_index=True, unique=True)
+
+
+
+
+
+
+from django.contrib.auth.models import User, Group, Permission
+
+
+class Userextension(models.Model):
+    user = models.OneToOneField(User)
+    resume = models.FileField(upload_to='resume', default=None)
+
+
+
+

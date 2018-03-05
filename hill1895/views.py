@@ -6,7 +6,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.template import RequestContext
 from django.http import HttpResponseRedirect
 
-from hill1895.models import Blog, Tag, Category1, Category2, Profile, Profile_Tag, Friend, Friend_Tag,Message,People
+from hill1895.models import Blog, Tag, Category1, Category2, Profile, Profile_Tag, Friend, Friend_Tag,Message,People,User
 import cv2
 from .forms import UploadFileForm
 import time
@@ -248,7 +248,12 @@ def profile(request):
 
 import os  
 import subprocess  
-  
+from django.views.decorators.csrf import csrf_exempt
+import json
+import uuid
+from django.http.response import HttpResponse
+
+
 def amr2mp3(amr_path,mp3_path=None):  
     path, name = os.path.split(amr_path)  
     if name.split('.')[-1]!='amr':  
@@ -262,17 +267,15 @@ def amr2mp3(amr_path,mp3_path=None):
         return 0  
     print 'success'  
     return mp3_path  
-  
-
-
 
 
 def face(request):
     if request.method == 'POST':
-
-        form = UploadFileForm(request.POST, request.FILES)
+        randomstr = str(uuid.uuid1())
         a = request.FILES['imgpath']
         b = request.FILES['audio']
+        tmpname,tmpext = os.path.splitext(b._name)
+        b._name = tmpname+randomstr+tmpext
         name = request.POST['receivername']
         with open(cwd+'/mysite/'+name+'.jpg','wb') as f1:
             for i in a.chunks():
@@ -285,27 +288,58 @@ def face(request):
             amr2mp3(cwd+'/static/'+b._name)
         else:
             bname = b._name
-        receiver = Message(img = name,audio ='../../static/'+bname )  ##########################delete cwd+
+        receiver = Message(img = name,audio ='../../static/'+bname )  ########delete cwd+
         receiver.save()
 
-        personcheck = People.objects.filter(name = name)
+        personcheck = People.objects.filter(name = name) #如果人脸识别库中的knownimage过多,会影响识别速度
         if personcheck:
             pass
         else:
             person = People(name = name)
             person.save()
-
         return HttpResponseRedirect('/face')
     else:
         tags = Tag.objects.all()
-
-
-
         return render_to_response('face_recog.html',
                                   {
                                       'tags':tags
                                   },context_instance=RequestContext(request))
 
+
+@csrf_exempt
+def checkreceivername(request):
+    name = request.POST['receivername']
+    imgfile = request.FILES['file']
+    randomstr = str(uuid.uuid1())
+    with open(cwd+'/mysite/'+'test'+randomstr+'.jpg','wb') as f1:
+        for i in imgfile.chunks():
+            f1.write(i)
+    person = People.objects.filter(name=name)
+    if not person:
+        return HttpResponse(json.dumps({'msg': 'success'}))
+
+    obama_image = face_recognition.load_image_file(cwd + "/mysite/" + name + ".jpg")
+    obama_face_encoding = face_recognition.face_encodings(obama_image)[0]
+    known_face_encodings = []
+    known_face_encodings.append(obama_face_encoding)
+
+    # Find all the faces and face encodings in the current frame of video
+    face_locations = face_recognition.load_image_file(cwd+'/mysite/'+'test'+randomstr+'.jpg')
+    face_encoding = face_recognition.face_encodings(face_locations)[0]
+
+
+    # See if the face is a match for the known face(s)
+    matches = face_recognition.compare_faces(known_face_encodings, face_encoding)
+    firstmatch = matches[0]
+    if not firstmatch:
+        return HttpResponse(json.dumps({'msg': 'fail'}))
+    else:
+        return HttpResponse(json.dumps({'msg': 'success'}))
+
+
+
+
+## not in use
 def invoke_camera(request):
 
     # This is a demo of running face recognition on live video from your webcam. It's a little more complicated than the
@@ -406,7 +440,6 @@ def invoke_camera(request):
 
 from pyaudio import PyAudio, paInt16
 import numpy as np
-from datetime import datetime
 import wave
 
 class recoder:
@@ -477,20 +510,15 @@ class recoder:
                     return True
                 else:
                     return False
-import uuid
+
+## not in use
+
 def invoke_audio(request):
     r = recoder()
     r.recoder()
     randomstr = str(uuid.uuid1())
     r.savewav(randomstr+".wav")
     return HttpResponseRedirect('/face/?message='+randomstr)
-    # tags = Tag.objects.all()
-    #
-    # return render_to_response('face_recog.html',
-    #                           {
-    #                               'tags':tags,
-    #                               'message':randomstr
-    #                           },context_instance=RequestContext(request))
 
 def record(request):
     return render_to_response('record.html')
@@ -498,68 +526,22 @@ def record(request):
 
 def webcamera(request):
     if request.method == 'POST':
-        persons = People.objects.all()
-        messages = Message.objects.all()
-        known_face_encodings = []
-        known_face_names = []
-        a = request.FILES['filename']
-        with open(cwd+'/mysite/'+'test.jpg','wb') as f1:
-            for i in a.chunks():
-                f1.write(i)
-        for i in persons:
-            obama_image = face_recognition.load_image_file(cwd + "/mysite/" + i.name + ".jpg")
-            obama_face_encoding = face_recognition.face_encodings(obama_image)[0]
-            known_face_encodings.append(obama_face_encoding)
-            known_face_names.append(i.name)
-
-        terminal = False
-        # Grab a single frame of video
-
-
-        # Only process every other frame of video to save time
-
-        # Find all the faces and face encodings in the current frame of video
-        face_locations = face_recognition.load_image_file(cwd+'/mysite/'+'test.jpg')
-        face_encoding = face_recognition.face_encodings(face_locations)[0]
-
-        face_names = []
-
-        # See if the face is a match for the known face(s)
-        matches = face_recognition.compare_faces(known_face_encodings, face_encoding)
-        name = "Unknown"
-
-        # If a match was found in known_face_encodings, just use the first one.
-        if True in matches:
-            first_match_index = matches.index(True)
-            name = known_face_names[first_match_index]
-            personmess = messages.filter(img=name)
-            # os.system('play ' + str(personmess[0].audio))
-            terminal = True
-            content = '<audio controls><source src='+str(personmess[0].audio)+'  /> </audio>'
-            return render_to_response('webcam.html',{'rec':content} ,context_instance=RequestContext(request))
-
-
-
-
-        return HttpResponseRedirect('/face')
+        pass
     else:
         return render_to_response('webcam.html',context_instance=RequestContext(request))
 
-from django.views.decorators.csrf import csrf_exempt
-import json
-from django.http.response import HttpResponse
+
 
 @csrf_exempt
 def uploadimg(request):
     a = request.FILES['file']
-
-
     persons = People.objects.all()
     messages = Message.objects.all()
     known_face_encodings = []
     known_face_names = []
     # a = request.FILES['filename']
-    with open(cwd+'/mysite/'+'test.jpg','wb') as f1:
+    randomstr = str(uuid.uuid1())
+    with open(cwd+'/mysite/'+'test'+randomstr+'.jpg','wb') as f1:
         for i in a.chunks():
             f1.write(i)
     for i in persons:
@@ -568,36 +550,32 @@ def uploadimg(request):
         known_face_encodings.append(obama_face_encoding)
         known_face_names.append(i.name)
 
-    terminal = False
-    # Grab a single frame of video
-
-
     # Only process every other frame of video to save time
 
     # Find all the faces and face encodings in the current frame of video
-    face_locations = face_recognition.load_image_file(cwd+'/mysite/'+'test.jpg')
+    face_locations = face_recognition.load_image_file(cwd+'/mysite/'+'test'+randomstr+'.jpg')
     face_encoding = face_recognition.face_encodings(face_locations)[0]
 
-    face_names = []
 
     # See if the face is a match for the known face(s)
     matches = face_recognition.compare_faces(known_face_encodings, face_encoding)
-    name = "Unknown"
 
-    # If a match was found in known_face_encodings, just use the first one.
+    msg = ''
+
     if True in matches:
-        first_match_index = matches.index(True)
-        name = known_face_names[first_match_index]
-        personmess = messages.filter(img=name)
-        # os.system('play ' + str(personmess[0].audio))
-        audios = []
-        for i in personmess:
-            audios.append(str(i.audio.name))
-        print(len(audios))
-        msg = ''
-        for j in audios:
-            msg+='<audio controls><source src="'+j+'" type="audio/mpeg"></audio><br/>'
-            #msg+= '<embed height="50" width="100" src="'+j+'">'
+        for index in range(len(matches)):
+            if matches[index]:
+                first_match_index = index
+                name = known_face_names[first_match_index]
+                personmess = messages.filter(img=name)
+                audios = []
+                for i in personmess:
+                    audios.append(str(i.audio.name))
+                print(len(audios))
+                
+                for j in audios:
+                    msg+='<audio controls><source src="'+j+'" type="audio/mpeg"></audio><br/>'
+
 
         return HttpResponse(json.dumps({'msg': msg}))
     return HttpResponse(json.dumps({'msg': 'nomessages'}))
@@ -606,6 +584,50 @@ def uploadimg(request):
 
 
 
+def doppelganger(request):
+    return render_to_response('dopindex.html')
 
+def dopregister(request):
+    return render_to_response('dopregister.html')
 
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework import permissions,response,status
+from . import constants
 
+@api_view(['post'])
+@permission_classes((permissions.AllowAny,))
+def dopregisterdel(request):
+    name = request.POST['username']
+    password = request.POST['password']
+
+    User.objects.create(username=name)
+    user = User.objects.get(username=name)
+    user.set_password(password)
+    user.save()
+    return response.Response(constants.to_response('success'))
+
+def doplogin(request):
+    return render_to_response('doplogin.html',context_instance=RequestContext(request))
+
+from django.contrib.auth import login as django_login, authenticate, logout as django_logout
+from validators import Validator
+@api_view(['post'])
+# @permission_classes((permissions.AllowAny,))
+def doplogindel(request):
+    validator = Validator(request.POST)
+    validator.username()
+    validator.validate('password', required=True, min_length=4)
+    if not validator.is_valid:
+        return response.Response(constants.ILLEGAL_REQUEST_PARAMETERS, status=status.HTTP_200_OK)
+    username = request.POST['username']
+    password = request.POST['password']
+    user = authenticate(username=username, password=password)
+    if user is None:
+        print 'user is none'
+        return response.Response(constants.USER_NOT_EXIST_OR_WRONG_PASSWORD)
+    else:
+        id = User.objects.get(username=username).id
+        print user
+        django_login(request, user)
+
+        return response.Response(constants.to_response(id))

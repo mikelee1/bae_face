@@ -37,11 +37,21 @@ urlpatterns = patterns('hill1895.views',
                        url(r'^blog_detail/blog_(?P<blog_id>\d+)/$', 'blog_detail', name='blog_detail'),
                        url(r'^tag_(?P<tag_id>\d+)/$', 'tag', name='tag'),
                        url(r'^geek/$', 'geek', name='geek'),
+
                        url(r'^face/invoke_camera/$','invoke_camera',name='invoke_camera'),
                        url(r'^face/record/$','record',name='record'),
                        url(r'^face/webcamera/$','webcamera',name='webcamera'),
                        url(r'^uploadimg/$','uploadimg',name='uploadimg'),
                        url(r'^face/$', 'face', name='face1'),
+                       url(r'^checkreceivername/$', 'checkreceivername', name='checkreceivername'),
+
+
+                       url(r'^doppelganger/$', 'doppelganger', name='doppelganger'),
+                       url(r'^dopregister/$', 'dopregister', name='dopregister'),
+                       url(r'^dopregisterdel/$', 'dopregisterdel', name='dopregisterdel'),
+                       url(r'^doplogin/$', 'doplogin', name='doplogin'),
+                       url(r'^doplogindel/$','doplogindel',name='doplogindel'),
+
                        url(r'^essay/$', 'essay', name='essay'),
                        url(r'^joke/$', 'joke', name='joke'),
                        url(r'^profile/$', 'profile', name='profile'),

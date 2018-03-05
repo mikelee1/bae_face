@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}mikelee_个人博客_文章列表{% endblock %}
+
+{% block seo %}
+  <meta name="description" content="mikelee的个人博客网站，用于记录学习和生活的心得。技术博客用于记录Python, Web等技术的学习和使用心得,随笔用于记录自己读书, 观影, 运动, 旅行的心得体会,吐槽用于吐槽" />
+  <meta name="keywords" content="mikelee,个人博客,编程,Geek" />
+{% endblock %}
+
+{% load hill1895_extras %}
+
+
+{% block navibar %}
+<script src="{% static 'js/jquery-1.11.3.min.js' %}"></script>
+    <script src="{% static 'js/ajax.csrf.js' %}"></script>
+    <script src="{% static 'js/jquery.form.js' %}"></script>
+    <script>
+        $(document).ready(function () {
+            $('.input').val('')
+        });
+
+
+
+        function login1() {
+            $('#loginform').ajaxSubmit(function(json){
+                if (json.error_code==0){
+                    alert('success')
+                    window.location.href='/';
+
+                }else{
+                    alert('wrogn')
+                    $('#pinfo').html(json.error_message)
+                }
+
+            })
+        }
+
+
+        function login(){
+
+            $.ajax({
+                url:'{% url "doplogindel" %}',
+                type:'post',
+                data:{
+                    'username':$('#name').val(),
+                    'password':$('#password').val()
+                },
+                success: function (json) {
+                    if (json.error_code==0){
+                        $('#info').html('successful')
+                    }
+                    else{
+                        $('#info').html(json.error_message)
+                    }
+
+                },
+                error:{
+
+                }
+            })
+
+        }
+
+
+    </script>
+	<nav class="navbar navbar-inverse" role="navigation" id="navibar">
+   <div>
+      <ul class="nav navbar-nav">
+         <li class="active"><a href="/">首页</a></li>
+         <li><a href="/geek">技术博客</a></li>
+         <li><a href="/essay">随笔</a></li>
+         <li><a href="/joke">吐槽</a></li>
+      </ul>
+   </div>
+</nav>
+{% endblock %}
+
+ {% block title_list %}
+
+
+<div align="center" style="margin-top: 10%;
+    border: solid;
+    padding: 10px;
+    border-width: 1px;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-bottom: 20%;">
+    <form id="loginform" action="{% url 'doplogindel' %}" method="POST" onsubmit="return false;" enctype="multipart/form-data">
+        {% csrf_token %}
+        name:    <input class='input' type="text" id="name" name="username"><br>
+        password:<input class='input' type="password" id="password" name="password"><br>
+        <button id="button" onclick="login();">提交</button>
+    </form>
+
+</div>
+
+
+
+
+{% endblock %}
+
+
+
+
+

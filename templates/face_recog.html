@@ -27,11 +27,46 @@
 </head>
 <body>
 
- 
+<script>
 
+    function onblurs(){
+
+           if(frm.imgpath.value==""){
+            alert("choose img！");
+            return False;
+            }else if(frm.receivername.value==""){
+            alert("input receiver name！");
+            return False;
+            }
+           receivername = $("#receivername").val();
+           var fileObj = document.getElementById("imgfile").files[0];
+           var formFile = new FormData();
+           formFile.append("file", fileObj);
+           formFile.append("receivername",receivername);
+           var data1 = formFile;
+
+           $.ajax({
+                type:"POST",
+                url:"/checkreceivername/",
+                dataType:"json",
+                data:data1,
+               cache: false,//上传文件无需缓存
+               processData: false,//用于对data参数进行序列化处理 这里必须false
+               contentType: false, //必须
+                success: function(result) {
+                    if (result.msg == 'success'){
+                    alert('name available')
+                    }else {
+                    alert('not available')
+                    }
+                },
+                error:function(e){
+                    alert('wrong')
+                }
+            });
+    }
+</script>
    {% include "header.html" %}
-
-
 <div class="container">
 
    <div class="row">
@@ -54,14 +89,13 @@
 
          <div id="content">
              {{message}}
-            <form method="POST" enctype="multipart/form-data">{% csrf_token %}
-              上传收信人图片：<input type="file" name="imgpath">
-                收信人姓名：<input type="text" name="receivername"><br/>
-
-                上传音频文件：<input type="file" name="audio">
-
-              <input type="submit" value="提交">
-            </form>
+        <form method="POST" enctype="multipart/form-data" name="frm">{% csrf_token %}
+            上传收信人图片：<input type="file" name="imgpath" id="imgfile">
+            收信人姓名：<input type="text" name="receivername" id="receivername" onblur="onblurs()"><br/>
+            <!--<button onclick="check();return false;" value="jiancha">jiancha</button><br/>-->
+            上传音频文件：<input type="file" name="audio" id="audiofile">
+            <input type="submit" id="but" value="提交">
+        </form>
              <a href="record">点我录音</a>
              <a href="webcamera">看看有没有消息</a>
          </div>	 
