@@ -6,17 +6,14 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.template import RequestContext
 from django.http import HttpResponseRedirect
 
-from hill1895.models import Blog, Tag, Category1, Category2, Profile, Profile_Tag, Friend, Friend_Tag,Message,People,User
+from hill1895.models import Blog, Tag, Category1, Category2, Profile, Profile_Tag, Friend, Friend_Tag,Message,People,User,dopUsers
 import cv2
 from .forms import UploadFileForm
 import time
 import face_recognition
 import sys,os
+import json
 cwd = os.getcwd()
-# sys.path.append(cwd)
-# Create your views here.
-
-# some function would be used in views
 
 
 __category1 = {
@@ -35,6 +32,8 @@ __category2 = {
     'joke': '吐槽'
 }
 
+def test(request):
+    return HttpResponse(json.dumps({'msg': 'work'}))
 
 def __get_latest(objs, max_num=8):
     obj_num = objs.count()
@@ -249,7 +248,6 @@ def profile(request):
 import os  
 import subprocess  
 from django.views.decorators.csrf import csrf_exempt
-import json
 import uuid
 from django.http.response import HttpResponse
 
@@ -277,7 +275,7 @@ def face(request):
         tmpname,tmpext = os.path.splitext(b._name)
         b._name = tmpname+randomstr+tmpext
         name = request.POST['receivername']
-        with open(cwd+'/mysite/'+name+'.jpg','wb') as f1:
+        with open(cwd+'/static/'+name+'.jpg','wb') as f1:
             for i in a.chunks():
                 f1.write(i)
         with open(cwd+'/static/'+b._name,'wb') as f2:
@@ -534,7 +532,9 @@ def webcamera(request):
 
 @csrf_exempt
 def uploadimg(request):
+    print('what')
     a = request.FILES['file']
+
     persons = People.objects.all()
     messages = Message.objects.all()
     known_face_encodings = []
@@ -545,7 +545,7 @@ def uploadimg(request):
         for i in a.chunks():
             f1.write(i)
     for i in persons:
-        obama_image = face_recognition.load_image_file(cwd + "/mysite/" + i.name + ".jpg")
+        obama_image = face_recognition.load_image_file(cwd + "/static/" + i.name + ".jpg")
         obama_face_encoding = face_recognition.face_encodings(obama_image)[0]
         known_face_encodings.append(obama_face_encoding)
         known_face_names.append(i.name)
@@ -572,16 +572,11 @@ def uploadimg(request):
                 for i in personmess:
                     audios.append(str(i.audio.name))
                 print(len(audios))
-                
                 for j in audios:
                     msg+='<audio controls><source src="'+j+'" type="audio/mpeg"></audio><br/>'
 
-
         return HttpResponse(json.dumps({'msg': msg}))
     return HttpResponse(json.dumps({'msg': 'nomessages'}))
-
-
-
 
 
 def doppelganger(request):
@@ -599,7 +594,6 @@ from . import constants
 def dopregisterdel(request):
     name = request.POST['username']
     password = request.POST['password']
-
     User.objects.create(username=name)
     user = User.objects.get(username=name)
     user.set_password(password)
@@ -631,3 +625,127 @@ def doplogindel(request):
         django_login(request, user)
 
         return response.Response(constants.to_response(id))
+door = False
+headdoor = False
+from django.db.models import Q
+import pickle
+import datetime
+@csrf_exempt
+def dopuploadimg(request):
+    if headdoor:
+        all_face_encodings = {}
+
+        a = dopUsers.objects.filter(inuse=1)
+        for i in a:
+
+            picname = i.headpath
+
+            face_locations = face_recognition.load_image_file(picname)
+            tmp = face_recognition.face_encodings(face_locations)
+            if not tmp:
+                continue
+            all_face_encodings[i.wxid]=tmp
+        with open(cwd + '/static/minihead/all_face_encodings.pkl', 'wb') as f:
+            pickle.dump(all_face_encodings, f)
+        return
+
+    if door:
+        imgs = os.listdir('hill1895/pachongimgs')
+        for i in imgs:
+            imgname = i.split('.')[0]
+            imguser = dopUsers.objects.filter(wxid = imgname)
+            if imguser:
+                continue
+            else:
+                face_locations = face_recognition.load_image_file(cwd + '/hill1895/pachongimgs/'+ imgname+ '.jpg')
+                tmp = face_recognition.face_encodings(face_locations)
+                if not tmp:
+                    print('no head')
+                    continue
+                with open(cwd + '/static/minihead/all_face_encodings.pkl', 'rb') as f:
+                    all_face_encodings = pickle.load(f)
+
+                with open(cwd + '/static/minihead/all_face_encodings.pkl', 'wb') as f:
+                    all_face_encodings[imgname] = tmp
+                    pickle.dump(all_face_encodings, f)
+                os.system('cp '+cwd + '/hill1895/pachongimgs/'+ imgname+ '.jpg '+cwd + '/static/'+ imgname+ '.jpg')
+                imgusernew = dopUsers(wxid=imgname,headpath=cwd + '/static/'  + imgname+ '.jpg',nichname='renren',inuse=1)
+                imgusernew.save()
+        return False
+    a = request.FILES['file']
+    userid = request.POST['userid']
+    if userid == '[object Null]':
+        return HttpResponse('userid is not avaiable')
+    nickname = request.POST['nickname']
+    known_face_names = []
+
+    # save raw photo
+    timefix = datetime.datetime.now().strftime('%m-%d %H:%M:%S')
+    picname = cwd + '/static/'  + str(userid)+'-'+timefix + '.jpg'
+
+    with open(picname, 'wb') as f1:
+        for i in a.chunks():
+            f1.write(i)
+
+    #check if there is head
+    face_locations = face_recognition.load_image_file(picname)
+    tmp=face_recognition.face_encodings(face_locations)
+    if not tmp:
+        return HttpResponse('no head')
+
+    # # save simple photo
+    # face_location = face_recognition.face_locations(face_locations)
+    # top, right, bottom, left = face_location[0]
+    # face = face_locations[top:bottom, left:right]
+    # pil_image = Image.fromarray(face)
+    # pil_image.save(picnamesimple)
+
+
+
+    personcheck = dopUsers.objects.filter(wxid=userid)  # 如果人脸识别库中的knownimage过多,会影响识别速度
+    if not personcheck:
+        person = dopUsers(wxid=str(userid), nichname=str(nickname), headpath=str(picname))
+        person.save()
+    else:
+        personcheck[0].headpath = picname
+        personcheck[0].save()
+
+    face_encoding = tmp[0]
+
+    persons = dopUsers.objects.filter(~Q(wxid = userid),inuse=1)
+    with open(cwd + '/static/minihead/all_face_encodings.pkl','rb') as f:
+        all_face_encodings = pickle.load(f)
+
+    with open(cwd + '/static/minihead/all_face_encodings.pkl','wb') as f:
+        all_face_encodings[userid]=tmp
+        pickle.dump(all_face_encodings,f)
+
+    known_face_encodings=[]
+    for i in persons:
+        obama_face_encoding = np.array(all_face_encodings[i.wxid])
+        known_face_encodings.append(obama_face_encoding[0])
+        known_face_names.append(i.headpath.split('/')[-1])
+    minvalue,firstindex = face_recognition.compare_faces(known_face_encodings, face_encoding,tolerance=0.5)
+    if minvalue<=0.5:
+        print(minvalue)
+        name = known_face_names[firstindex]
+        msg = 'https://www.liyuanye.club'+'/static/' + name
+        return HttpResponse(msg)
+    return HttpResponse('')
+
+
+import requests
+APP_ID =  'wxaf249daf125d652c'
+APP_SECRET ='60fae25477b536fb02dac1755f4b3dbe'
+@csrf_exempt
+def dopgetopenid(request):
+    code = request.GET['js_code']
+    js_code = code
+    appid = APP_ID
+    secret = APP_SECRET
+    requestString = 'https://api.weixin.qq.com/sns/jscode2session?appid={APPID}&secret={SECRET}&js_code={JSCODE}&grant_type=authorization_code'.format(
+        APPID=appid, SECRET=secret, JSCODE=js_code)
+    r = requests.get(requestString)
+    r = r.json()
+    print(r['openid'])
+    return HttpResponse(r['openid'])

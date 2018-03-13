@@ -120,8 +120,12 @@ class People(models.Model):
     name = models.CharField(max_length=50, db_index=True, unique=True)
 
 
-
-
+class dopUsers(models.Model):
+    wxid = models.CharField(max_length=250,db_index=True, unique=True)
+    nichname = models.CharField(max_length=250)
+    headpath = models.CharField(max_length=250)
+    inuse = models.IntegerField(default=1)
+    simpleheadpath = models.CharField(max_length=250,default='null')
 
 
 from django.contrib.auth.models import User, Group, Permission

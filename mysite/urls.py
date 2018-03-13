@@ -38,6 +38,8 @@ urlpatterns = patterns('hill1895.views',
                        url(r'^tag_(?P<tag_id>\d+)/$', 'tag', name='tag'),
                        url(r'^geek/$', 'geek', name='geek'),
 
+                       url(r'^test/$', 'test', name='test'),
+
                        url(r'^face/invoke_camera/$','invoke_camera',name='invoke_camera'),
                        url(r'^face/record/$','record',name='record'),
                        url(r'^face/webcamera/$','webcamera',name='webcamera'),
@@ -51,6 +53,9 @@ urlpatterns = patterns('hill1895.views',
                        url(r'^dopregisterdel/$', 'dopregisterdel', name='dopregisterdel'),
                        url(r'^doplogin/$', 'doplogin', name='doplogin'),
                        url(r'^doplogindel/$','doplogindel',name='doplogindel'),
+                       url(r'^dopuploadimg/$','dopuploadimg',name='dopuploadimg'),
+                       url(r'^dopgetopenid/$','dopgetopenid',name='dopgetopenid'),
+
 
                        url(r'^essay/$', 'essay', name='essay'),
                        url(r'^joke/$', 'joke', name='joke'),

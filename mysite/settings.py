@@ -148,5 +148,5 @@ STATICFILES_DIRS=(
    #'/var/www/hill1895/hill1895/static/',
     )
 
-
+# APPEND_SLASH=False
 
