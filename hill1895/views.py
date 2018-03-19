@@ -630,6 +630,7 @@ headdoor = False
 from django.db.models import Q
 import pickle
 import datetime
+from PIL import Image, ImageDraw
 @csrf_exempt
 def dopuploadimg(request):
     if headdoor:
@@ -681,7 +682,7 @@ def dopuploadimg(request):
 
     # save raw photo
     timefix = datetime.datetime.now().strftime('%m-%d %H:%M:%S')
-    picname = cwd + '/static/'  + str(userid)+'-'+timefix + '.jpg'
+    picname = cwd + '/static/' + str(userid)+'-'+timefix + '.jpg'
 
     with open(picname, 'wb') as f1:
         for i in a.chunks():
@@ -691,24 +692,44 @@ def dopuploadimg(request):
     face_locations = face_recognition.load_image_file(picname)
     tmp=face_recognition.face_encodings(face_locations)
     if not tmp:
-        return HttpResponse('no head')
+        return HttpResponse(json.dumps({'msg': 'no head'}))
 
-    # # save simple photo
-    # face_location = face_recognition.face_locations(face_locations)
-    # top, right, bottom, left = face_location[0]
-    # face = face_locations[top:bottom, left:right]
-    # pil_image = Image.fromarray(face)
-    # pil_image.save(picnamesimple)
+
+    #draw features
+    face_landmarks_list = face_recognition.face_landmarks(face_locations)
+    linepicname = cwd + '/static/' + str(userid) + '-' + timefix + 'line.jpg'
+    for face_landmarks in face_landmarks_list:
+
+        # Print the location of each facial feature in this image
+        facial_features = [
+            'chin',
+            'left_eyebrow',
+            'right_eyebrow',
+            'nose_bridge',
+            'nose_tip',
+            'left_eye',
+            'right_eye',
+            'top_lip',
+            'bottom_lip'
+        ]
+        pil_image = Image.fromarray(face_locations)
+        d = ImageDraw.Draw(pil_image)
+
+        for facial_feature in facial_features:
+            d.line(face_landmarks[facial_feature], width=5)
+        pil_image.save(linepicname)
 
 
 
     personcheck = dopUsers.objects.filter(wxid=userid)  # 如果人脸识别库中的knownimage过多,会影响识别速度
     if not personcheck:
-        person = dopUsers(wxid=str(userid), nichname=str(nickname), headpath=str(picname))
-        person.save()
+        dopUsers(wxid=str(userid), nichname=str(nickname), headpath=str(picname),simpleheadpath=str(linepicname)).save()
+
     else:
-        personcheck[0].headpath = picname
-        personcheck[0].save()
+        # personcheck[0].headpath = picname
+        # personcheck[0].simpleheadpath = linepicname
+        # personcheck[0].save()
+        personcheck.update(headpath=picname,simpleheadpath=linepicname)
 
     face_encoding = tmp[0]
 
@@ -726,12 +747,15 @@ def dopuploadimg(request):
         known_face_encodings.append(obama_face_encoding[0])
         known_face_names.append(i.headpath.split('/')[-1])
     minvalue,firstindex = face_recognition.compare_faces(known_face_encodings, face_encoding,tolerance=0.5)
+
     if minvalue<=0.5:
+        totalnum = dopUsers.objects.filter(thumb=1).count()
+
         print(minvalue)
         name = known_face_names[firstindex]
-        msg = 'https://www.liyuanye.club'+'/static/' + name
-        return HttpResponse(msg)
-    return HttpResponse('')
+        msg = [{'img':'https://www.liyuanye.club'+'/static/' + name},{'img':'https://www.liyuanye.club'+'/static/' +personcheck[0].simpleheadpath.split('/')[-1]} ]
+        return HttpResponse(json.dumps({'msg':msg,'test':1,'totalnum':totalnum}))
+    return HttpResponse(json.dumps({'msg':''}))
 
 
 import requests
@@ -749,3 +773,29 @@ def dopgetopenid(request):
     r = r.json()
     print(r['openid'])
     return HttpResponse(r['openid'])
+
+
+@csrf_exempt
+def dopgetwxqrcode(request):
+    appid = APP_ID
+    secret = APP_SECRET
+    requestString = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid={APPID}&secret={SECRET}'.format(
+        APPID=appid, SECRET=secret)
+    r = requests.get(requestString)
+    r = r.json()
+    requesturl = 'https://api.weixin.qq.com/wxa/getwxacode?access_token='+ str(r['access_token'])
+    r = requests.post(requesturl,json={'path':'https://www.liyuanye.club/'})
+    with open('static/qrcode.jpg','wb') as f:
+        f.write(r.content)
+
+    return HttpResponse('https://www.liyuanye.club/static/qrcode.jpg')
+
+@csrf_exempt
+def dopupdatethumbup(request):
+    wxid = request.POST['wxid']
+    thumb = request.POST['thumb']
+    person = dopUsers.objects.filter(wxid=wxid).update(thumb=1)
+    if person:
+        return HttpResponse('ok')
+    else:
+        return HttpResponse('wrong')

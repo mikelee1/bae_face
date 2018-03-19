@@ -144,7 +144,9 @@ STATIC_URL = '/static/'
 STATIC_ROOT=os.path.join(BASE_DIR,'static').replace('\\','/')
 #STATIC_ROOT='/var/www/hill1895/static/'
 STATICFILES_DIRS=(
+    # os.path.join(BASE_DIR,'static/minihead').replace('\\','/'),
     os.path.join(BASE_DIR,'hill1895/static').replace('\\','/'),
+
    #'/var/www/hill1895/hill1895/static/',
     )
 

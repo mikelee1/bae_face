@@ -7,8 +7,177 @@
       <change beforePath="$PROJECT_DIR$/hill1895/views.py" afterPath="$PROJECT_DIR$/hill1895/views.py" />
       <change beforePath="$PROJECT_DIR$/mysite/settings.py" afterPath="$PROJECT_DIR$/mysite/settings.py" />
       <change beforePath="$PROJECT_DIR$/mysite/urls.py" afterPath="$PROJECT_DIR$/mysite/urls.py" />
-      <change beforePath="$PROJECT_DIR$/mysite/yezi.jpg" afterPath="$PROJECT_DIR$/mysite/yezi.jpg" />
-      <change beforePath="$PROJECT_DIR$/static/aaa.wav" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/minihead/all_face_encodings.pkl" afterPath="$PROJECT_DIR$/static/minihead/all_face_encodings.pkl" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0TjnxJTkGbwIKrMppkZ4MKc-03-12 15:49:00.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0TjnxJTkGbwIKrMppkZ4MKc-03-12 15:50:36.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0TjnxJTkGbwIKrMppkZ4MKc-03-12 15:50:40.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0TjnxJTkGbwIKrMppkZ4MKc-03-12 15:50:52.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0TjnxJTkGbwIKrMppkZ4MKc-03-12 15:50:54.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0TjnxJTkGbwIKrMppkZ4MKc-03-12 15:50:55.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0TjnxJTkGbwIKrMppkZ4MKc-03-12 15:50:56.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0TjnxJTkGbwIKrMppkZ4MKc-03-12 15:50:59.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0TjnxJTkGbwIKrMppkZ4MKc-03-12 15:51:00.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0TjnxJTkGbwIKrMppkZ4MKc-03-12 15:51:16.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0TjnxJTkGbwIKrMppkZ4MKc-03-12 15:53:29.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0TjnxJTkGbwIKrMppkZ4MKc-03-12 15:53:30.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0TjnxJTkGbwIKrMppkZ4MKc-03-12 15:53:31.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0TjnxJTkGbwIKrMppkZ4MKc-03-12 15:53:32.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0TjnxJTkGbwIKrMppkZ4MKc-03-12 15:53:43.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0TjnxJTkGbwIKrMppkZ4MKc-03-12 15:53:45.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0TjnxJTkGbwIKrMppkZ4MKc-03-12 15:53:46.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0TjnxJTkGbwIKrMppkZ4MKc-03-12 15:53:47.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0TjnxJTkGbwIKrMppkZ4MKc-03-12 15:54:16.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0TjnxJTkGbwIKrMppkZ4MKc-03-12 15:54:17.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0TjnxJTkGbwIKrMppkZ4MKc-03-12 15:54:18.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0TjnxJTkGbwIKrMppkZ4MKc-03-12 15:54:34.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0TjnxJTkGbwIKrMppkZ4MKc-03-12 15:54:49.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0TjnxJTkGbwIKrMppkZ4MKc.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 11:45:26.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 11:46:05.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 14:18:40.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 14:21:11.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 14:23:15.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 14:24:23.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 14:35:40.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 14:37:14.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 14:52:20.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 14:55:13.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 14:56:26.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 15:00:32.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 15:02:20.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 15:06:56.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 15:15:51.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 15:37:08.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 15:37:53.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 15:39:04.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 15:40:15.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 15:46:56.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 15:56:21.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 16:40:35.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 16:43:16.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 16:56:11.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 17:40:32.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 17:40:32simple.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 18:03:10.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 18:07:53.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 18:12:49.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 18:16:22.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 19:02:32.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 19:03:05.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 19:05:10.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 19:05:43.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 19:09:11.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 19:09:33.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 19:10:07.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 19:10:38.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 20:19:46.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 22:38:53.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 22:49:12.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 22:49:36.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 23:25:42.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 23:26:08.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 23:26:56.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 23:27:35.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 23:28:02.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 23:28:31.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 23:28:47.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-13 00:02:21.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-13 00:02:32.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-13 00:02:46.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-13 00:03:07.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-13 00:03:19.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-13 00:03:45.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-13 00:03:57.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-13 00:04:10.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-13 00:04:20.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-13 00:04:35.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-13 00:04:52.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-13 00:05:07.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-13 00:05:22.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-13 00:05:44.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-13 00:06:12.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-13 00:06:35.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-13 00:06:53.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-13 00:07:35.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-13 00:07:53.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-13 00:08:39.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-13 00:09:14.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-13 00:09:42.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-13 11:24:28.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-13 11:25:15.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-13 11:25:27.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-13 11:25:37.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-13 11:25:46.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-13 11:25:58.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-13 11:26:16.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-13 11:26:33.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-13 11:26:54.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-13 11:27:36.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-13 11:27:58.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-13 11:44:56.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-13 12:18:43.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-13 13:32:57.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-13 13:33:46.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-13 13:37:29.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-13 13:37:44.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-13 13:58:35.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-13 13:58:57.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-13 14:13:56.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-13 14:19:50.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-13 14:43:04.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-13 14:44:33.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-12 12:42:31.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-12 12:45:37.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-12 14:49:39.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-12 16:58:30.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-12 17:11:01.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-12 17:12:03.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-12 17:21:13.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-12 17:22:37.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-12 19:07:04.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-12 20:16:35.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-12 20:17:13.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-12 20:17:30.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-12 20:18:34.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-12 20:19:46.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-12 20:58:28.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-12 21:04:52.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-12 21:31:49.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-12 21:40:37.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-12 21:48:20.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-12 21:50:27.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-12 21:51:00.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-12 21:55:30.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-12 21:59:55.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-12 22:06:04.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-12 22:07:41.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-12 22:09:12.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-12 22:10:03.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-12 22:12:45.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-12 22:13:01.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-12 22:13:10.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-12 22:19:24.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-12 22:20:20.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-12 22:23:29.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-12 22:25:34.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-12 22:28:08.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-12 22:35:28.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-12 22:37:12.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-12 22:38:07.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-12 22:39:24.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-12 22:48:25.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-12 22:48:47.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-12 22:49:02.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-12 22:55:10.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-12 23:24:09.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-12 23:24:37.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-13 13:16:45.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-13 13:17:14.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-13 13:17:42.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-13 13:51:13.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-13 13:53:25.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-13 14:31:50.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/oeIUL0eoXlTBaU2kKRhf0iH5ucSs-03-13 14:32:16.jpg" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,51 +188,44 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hill1895/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
-              <caret line="691" column="52" lean-forward="true" selection-start-line="691" selection-start-column="52" selection-end-line="691" selection-end-column="52" />
+            <state relative-caret-position="215">
+              <caret line="748" column="50" lean-forward="true" selection-start-line="748" selection-start-column="50" selection-end-line="748" selection-end-column="50" />
+              <folding>
+                <element signature="e#21858#22352#0" expanded="false" />
+                <element signature="e#22375#23519#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="api.py" pinned="false" current-in-tab="true">
+        <entry file="file:///usr/local/lib/python2.7/dist-packages/face_recognition/api.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="346">
+              <caret line="205" column="22" lean-forward="true" selection-start-line="205" selection-start-column="22" selection-end-line="205" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mysite/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="15" column="33" lean-forward="false" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+            <state relative-caret-position="846">
+              <caret line="58" column="91" lean-forward="false" selection-start-line="58" selection-start-column="91" selection-end-line="58" selection-end-column="91" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="detail.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/detail.html">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mysite/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="96" column="40" lean-forward="false" selection-start-line="96" selection-start-column="33" selection-end-line="96" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="friends.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/friends.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="37" lean-forward="false" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="37" />
+            <state relative-caret-position="2628">
+              <caret line="146" column="0" lean-forward="false" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="65" />
               <folding />
             </state>
           </provider>
@@ -72,8 +234,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hill1895/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2250">
-              <caret line="128" column="0" lean-forward="false" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
+            <state relative-caret-position="2268">
+              <caret line="129" column="0" lean-forward="false" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -100,10 +262,12 @@
       <find>sec</find>
       <find>right_column</find>
       <find>friend</find>
+      <find>322644390.jpg</find>
+      <find>save</find>
     </findStrings>
     <dirStrings>
-      <dir>$PROJECT_DIR$</dir>
       <dir>$PROJECT_DIR$/templates</dir>
+      <dir>$PROJECT_DIR$</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -118,21 +282,21 @@
         <option value="$PROJECT_DIR$/mysite/validators.py" />
         <option value="$PROJECT_DIR$/templates/doplogin.html" />
         <option value="$PROJECT_DIR$/templates/face_recog.html" />
-        <option value="$PROJECT_DIR$/mysite/settings.py" />
-        <option value="$PROJECT_DIR$/mysite/urls.py" />
         <option value="/usr/local/lib/python2.7/dist-packages/face_recognition/api.py" />
         <option value="$PROJECT_DIR$/hill1895/data00.txt" />
-        <option value="$PROJECT_DIR$/hill1895/models.py" />
         <option value="$PROJECT_DIR$/hill1895/del.py" />
+        <option value="$PROJECT_DIR$/mysite/settings.py" />
+        <option value="$PROJECT_DIR$/mysite/urls.py" />
+        <option value="$PROJECT_DIR$/hill1895/models.py" />
         <option value="$PROJECT_DIR$/hill1895/views.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="64" />
-    <option name="y" value="-11" />
-    <option name="width" value="1857" />
-    <option name="height" value="1092" />
+    <option name="x" value="333" />
+    <option name="y" value="46" />
+    <option name="width" value="1855" />
+    <option name="height" value="1084" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -165,6 +329,12 @@
               <item name="bae_face" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="bae_face" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bae_face" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="minihead" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -173,7 +343,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../testweb/testweb.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Downloads/face_recognition/examples" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -230,7 +400,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="bae_face" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
-      <option name="PARAMETERS" value="runserver 0.0.0.0:8092" />
+      <option name="PARAMETERS" value="runserver 0.0.0.0:8093" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -272,25 +442,25 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
+    <frame x="333" y="46" width="1857" height="1092" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2723799" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36517468" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29319373" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29319373" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -322,28 +492,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/hill1895/views.py</url>
-          <line>645</line>
+          <line>646</line>
           <option name="timeStamp" value="121" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/hill1895/views.py</url>
-          <line>647</line>
+          <line>648</line>
           <option name="timeStamp" value="122" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/hill1895/views.py</url>
-          <line>727</line>
-          <option name="timeStamp" value="124" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/hill1895/views.py</url>
-          <line>715</line>
-          <option name="timeStamp" value="128" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/hill1895/views.py</url>
-          <line>674</line>
-          <option name="timeStamp" value="132" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/hill1895/del.py</url>
@@ -362,11 +517,36 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/hill1895/views.py</url>
-          <line>634</line>
-          <option name="timeStamp" value="140" />
+          <line>783</line>
+          <option name="timeStamp" value="141" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/hill1895/views.py</url>
+          <line>794</line>
+          <option name="timeStamp" value="150" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/hill1895/views.py</url>
+          <line>765</line>
+          <option name="timeStamp" value="152" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/hill1895/views.py</url>
+          <line>779</line>
+          <option name="timeStamp" value="153" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/hill1895/views.py</url>
+          <line>675</line>
+          <option name="timeStamp" value="154" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/hill1895/views.py</url>
+          <line>750</line>
+          <option name="timeStamp" value="155" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="141" />
+      <option name="time" value="156" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -377,125 +557,53 @@
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>friends</expression-string>
+        <expression-string>dopUsers.objects.filter(thumb=1).count()</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>imgs</expression-string>
+        <expression-string>dopUsers.objects.filter(thumb=1).number_of_entries</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>img</expression-string>
+        <expression-string>dopUsers.objects.filter(thumb=1)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>face_recognition.compare_faces(known_face_encodings1, face_encoding,tolerance=0.5)</expression-string>
+        <expression-string>dopUsers.objects.filter(thumb=1).size</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>face_recognition.compare_faces(known_face_encodings, face_encoding,tolerance=0.5)</expression-string>
+        <expression-string>person.save()</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>obama_face_encoding</expression-string>
+        <expression-string>person[0].save()</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>obama_face_encoding1</expression-string>
+        <expression-string>person[0].thumb=True</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>known_face_encodings1</expression-string>
+        <expression-string>person[0].thumb</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>known_face_encodings</expression-string>
+        <expression-string>person[0]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/static/339021702.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/339834927.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/340735367.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/340911363.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/340948839.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/341018352.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/346114655.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/358713943.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/366305432.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/375971515.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/dd.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/382234801.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/django/core/handlers/wsgi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="176" column="0" lean-forward="false" selection-start-line="176" selection-start-column="0" selection-end-line="176" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/27662873.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/40000051.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -574,58 +682,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/[object Null]-03-12 12:14:48.jpg" />
-    <entry file="file://$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 14:37:14.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 14:35:40.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/oeIUL0TjnxJTkGbwIKrMppkZ4MKc-03-12 15:49:00.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hill1895/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2250">
-          <caret line="128" column="0" lean-forward="false" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 14:37:14.jpg" />
+    <entry file="file://$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-12 14:35:40.jpg" />
+    <entry file="file://$PROJECT_DIR$/static/oeIUL0TjnxJTkGbwIKrMppkZ4MKc-03-12 15:49:00.jpg" />
+    <entry file="file://$PROJECT_DIR$/test.jpg" />
     <entry file="file://$PROJECT_DIR$/static/308773562.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="146" column="0" lean-forward="false" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/minihead/all_face_encodings.pkl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="2" lean-forward="true" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/face_recognition/api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
-          <caret line="214" column="0" lean-forward="false" selection-start-line="214" selection-start-column="0" selection-end-line="214" selection-end-column="0" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
@@ -635,18 +698,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/django/views/decorators/csrf.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="972">
-          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hill1895/data00.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="169" lean-forward="false" selection-start-line="0" selection-start-column="169" selection-end-line="0" selection-end-column="169" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -662,7 +717,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -670,15 +724,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="33" lean-forward="false" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -686,15 +731,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="96" column="40" lean-forward="false" selection-start-line="96" selection-start-column="33" selection-end-line="96" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -702,22 +738,148 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" column="37" lean-forward="false" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../testweb/testweb.py" />
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/requests/api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="100" column="4" lean-forward="false" selection-start-line="100" selection-start-column="4" selection-end-line="100" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/django/core/handlers/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="146" column="0" lean-forward="false" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qrcode.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-36">
+          <caret line="15" column="33" lean-forward="false" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="96" column="40" lean-forward="false" selection-start-line="96" selection-start-column="33" selection-end-line="96" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="0" column="135712" lean-forward="false" selection-start-line="0" selection-start-column="135712" selection-end-line="0" selection-end-column="135712" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/356993726.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/322644390.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/django/conf/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="197" column="0" lean-forward="false" selection-start-line="197" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/minihead/oeIUL0alwocixq3zEa1m9VoDywVY-03-16 00:16:54line.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/minihead/oeIUL0alwocixq3zEa1m9VoDywVY-03-16 00:28:08line.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/minihead/oeIUL0alwocixq3zEa1m9VoDywVY-03-16 00:26:34line.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/minihead/oeIUL0alwocixq3zEa1m9VoDywVY-03-16 00:32:38line.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2628">
+          <caret line="146" column="0" lean-forward="false" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="65" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../testweb/testweb.py">
+    <entry file="file://$PROJECT_DIR$/static/oeIUL0alwocixq3zEa1m9VoDywVY-03-16 00:45:07line.jpg" />
+    <entry file="file://$PROJECT_DIR$/static/224245930.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hill1895/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1026">
-          <caret line="150" column="0" lean-forward="false" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
+        <state relative-caret-position="2268">
+          <caret line="129" column="0" lean-forward="false" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="846">
+          <caret line="58" column="91" lean-forward="false" selection-start-line="58" selection-start-column="91" selection-end-line="58" selection-end-column="91" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/django/views/decorators/csrf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/minihead/all_face_encodings.pkl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-174416">
+          <caret line="0" column="2" lean-forward="true" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hill1895/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="691" column="52" lean-forward="true" selection-start-line="691" selection-start-column="52" selection-end-line="691" selection-end-column="52" />
+        <state relative-caret-position="215">
+          <caret line="748" column="50" lean-forward="true" selection-start-line="748" selection-start-column="50" selection-end-line="748" selection-end-column="50" />
+          <folding>
+            <element signature="e#21858#22352#0" expanded="false" />
+            <element signature="e#22375#23519#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/face_recognition/api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="205" column="22" lean-forward="true" selection-start-line="205" selection-start-column="22" selection-end-line="205" selection-end-column="22" />
           <folding />
         </state>
       </provider>

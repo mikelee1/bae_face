@@ -126,6 +126,7 @@ class dopUsers(models.Model):
     headpath = models.CharField(max_length=250)
     inuse = models.IntegerField(default=1)
     simpleheadpath = models.CharField(max_length=250,default='null')
+    thumb = models.BooleanField(default=False)
 
 
 from django.contrib.auth.models import User, Group, Permission

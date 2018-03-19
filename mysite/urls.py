@@ -55,6 +55,10 @@ urlpatterns = patterns('hill1895.views',
                        url(r'^doplogindel/$','doplogindel',name='doplogindel'),
                        url(r'^dopuploadimg/$','dopuploadimg',name='dopuploadimg'),
                        url(r'^dopgetopenid/$','dopgetopenid',name='dopgetopenid'),
+                       url(r'^dopgetwxqrcode/$','dopgetwxqrcode',name='dopgetwxqrcode'),
+                       url(r'^dopupdatethumbup/$','dopupdatethumbup',name='dopupdatethumbup'),
+
+
 
 
                        url(r'^essay/$', 'essay', name='essay'),
@@ -68,3 +72,5 @@ urlpatterns = patterns('hill1895.views',
                        )
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+
