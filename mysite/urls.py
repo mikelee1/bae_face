@@ -60,6 +60,13 @@ urlpatterns = patterns('hill1895.views',
 
 
 
+                       url(r'^prankuploadimg/$','prankuploadimg',name='prankuploadimg'),
+
+
+
+
+
+
 
                        url(r'^essay/$', 'essay', name='essay'),
                        url(r'^joke/$', 'joke', name='joke'),

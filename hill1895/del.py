@@ -28,7 +28,7 @@ class Renren(threading.Thread):
         r = self.opener.open(req)
         tmp = r.read()
         self.myid = re.search(r'http://www.renren.com/(\d+)', tmp).group(1)
-        self.myid = '332098384'
+        self.myid = '321666259'
         print(self.myid)
 
     def friends(self):
@@ -125,7 +125,7 @@ class Renren(threading.Thread):
         friends = []
         imgs = []
         names = []
-        count = 0
+        count = 3
         try:
             with open('havedown.txt','r') as f:
                 havedown = f.read().strip().split(' ')
@@ -170,7 +170,7 @@ class Renren(threading.Thread):
             friends = friends + f
             imgs.extend(img)
             count = count + 1
-            if f == [] :
+            if f == [] or count>5:
                 with open('havedown.txt', 'w') as f:
                     f.write(' '.join(havedown))
                 return friends,imgs,names
@@ -259,15 +259,15 @@ def down():
             print('what')
 
 if __name__ == "__main__":
-    # a = Renren(myemail, mypassword)
-    # print ("your account and password are %s %s" % (myemail, mypassword))
-    # a.login()
-    # with open('data00.txt','r') as con:
-    #     tmpda = con.read()
-    #     f = tmpda.strip().split(' ')
-    #
-    # a.todolist = f
-    # a.donelist = []
+    a = Renren(myemail, mypassword)
+    print ("your account and password are %s %s" % (myemail, mypassword))
+    a.login()
+    with open('data00.txt','r') as con:
+        tmpda = con.read()
+        f = tmpda.strip().split(' ')
+
+    a.todolist = f
+    a.donelist = []
     # a.friends()
-    # a.realrun()
-    down()
+    a.realrun()
+    # down()

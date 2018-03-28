@@ -630,7 +630,14 @@ headdoor = False
 from django.db.models import Q
 import pickle
 import datetime
+import time
 from PIL import Image, ImageDraw
+import urllib2
+
+
+
+
+humwords = ['这也太像了','简直双胞胎']
 @csrf_exempt
 def dopuploadimg(request):
     if headdoor:
@@ -648,7 +655,7 @@ def dopuploadimg(request):
             all_face_encodings[i.wxid]=tmp
         with open(cwd + '/static/minihead/all_face_encodings.pkl', 'wb') as f:
             pickle.dump(all_face_encodings, f)
-        return
+        return False
 
     if door:
         imgs = os.listdir('hill1895/pachongimgs')
@@ -673,66 +680,79 @@ def dopuploadimg(request):
                 imgusernew = dopUsers(wxid=imgname,headpath=cwd + '/static/'  + imgname+ '.jpg',nichname='renren',inuse=1)
                 imgusernew.save()
         return False
+    print(time.time())
     a = request.FILES['file']
+    print(time.time())
     userid = request.POST['userid']
+    avatar = request.POST['avatar']
+    response = urllib2.urlopen(avatar)
+    cat_img = response.read()
+
+    with open(cwd+'/static/avatar/'+str(userid)+'.jpg', 'wb') as f:
+        f.write(cat_img)
+
+
+
+
     if userid == '[object Null]':
         return HttpResponse('userid is not avaiable')
+    print(time.time())
     nickname = request.POST['nickname']
     known_face_names = []
 
     # save raw photo
     timefix = datetime.datetime.now().strftime('%m-%d %H:%M:%S')
     picname = cwd + '/static/' + str(userid)+'-'+timefix + '.jpg'
-
     with open(picname, 'wb') as f1:
         for i in a.chunks():
             f1.write(i)
-
+    print(time.time())
     #check if there is head
     face_locations = face_recognition.load_image_file(picname)
     tmp=face_recognition.face_encodings(face_locations)
     if not tmp:
-        return HttpResponse(json.dumps({'msg': 'no head'}))
+        return HttpResponse(json.dumps({'msg': 'no head','signal':'no head'}))
 
-
-    #draw features
-    face_landmarks_list = face_recognition.face_landmarks(face_locations)
-    linepicname = cwd + '/static/' + str(userid) + '-' + timefix + 'line.jpg'
-    for face_landmarks in face_landmarks_list:
-
-        # Print the location of each facial feature in this image
-        facial_features = [
-            'chin',
-            'left_eyebrow',
-            'right_eyebrow',
-            'nose_bridge',
-            'nose_tip',
-            'left_eye',
-            'right_eye',
-            'top_lip',
-            'bottom_lip'
-        ]
-        pil_image = Image.fromarray(face_locations)
-        d = ImageDraw.Draw(pil_image)
-
-        for facial_feature in facial_features:
-            d.line(face_landmarks[facial_feature], width=5)
-        pil_image.save(linepicname)
+    # #draw features
+    # face_landmarks_list = face_recognition.face_landmarks(face_locations)
+    # linepicname = cwd + '/static/' + str(userid) + '-' + timefix + 'line.jpg'
+    # for face_landmarks in face_landmarks_list:
+    #
+    #
+    #     facial_features = [
+    #         'chin',
+    #         'left_eyebrow',
+    #         'right_eyebrow',
+    #         'nose_bridge',
+    #         'nose_tip',
+    #         'left_eye',
+    #         'right_eye',
+    #         'top_lip',
+    #         'bottom_lip'
+    #     ]
+    #     pil_image = Image.fromarray(face_locations)
+    #     d = ImageDraw.Draw(pil_image)
+    #
+    #     for facial_feature in facial_features:
+    #         d.line(face_landmarks[facial_feature], width=5)
+    #     pil_image.save(linepicname)
 
 
 
     personcheck = dopUsers.objects.filter(wxid=userid)  # 如果人脸识别库中的knownimage过多,会影响识别速度
     if not personcheck:
-        dopUsers(wxid=str(userid), nichname=str(nickname), headpath=str(picname),simpleheadpath=str(linepicname)).save()
+        dopUsers(wxid=str(userid), nichname=str(nickname), headpath=str(picname)
+                 # ,simpleheadpath=str(linepicname)
+                 ).save()
 
     else:
-        # personcheck[0].headpath = picname
-        # personcheck[0].simpleheadpath = linepicname
-        # personcheck[0].save()
-        personcheck.update(headpath=picname,simpleheadpath=linepicname)
+
+        personcheck.update(headpath=picname
+                           # ,simpleheadpath=linepicname
+                           )
 
     face_encoding = tmp[0]
-
+    print(time.time())
     persons = dopUsers.objects.filter(~Q(wxid = userid),inuse=1)
     with open(cwd + '/static/minihead/all_face_encodings.pkl','rb') as f:
         all_face_encodings = pickle.load(f)
@@ -740,22 +760,23 @@ def dopuploadimg(request):
     with open(cwd + '/static/minihead/all_face_encodings.pkl','wb') as f:
         all_face_encodings[userid]=tmp
         pickle.dump(all_face_encodings,f)
-
     known_face_encodings=[]
     for i in persons:
         obama_face_encoding = np.array(all_face_encodings[i.wxid])
         known_face_encodings.append(obama_face_encoding[0])
         known_face_names.append(i.headpath.split('/')[-1])
     minvalue,firstindex = face_recognition.compare_faces(known_face_encodings, face_encoding,tolerance=0.5)
-
     if minvalue<=0.5:
         totalnum = dopUsers.objects.filter(thumb=1).count()
 
         print(minvalue)
         name = known_face_names[firstindex]
-        msg = [{'img':'https://www.liyuanye.club'+'/static/' + name},{'img':'https://www.liyuanye.club'+'/static/' +personcheck[0].simpleheadpath.split('/')[-1]} ]
-        return HttpResponse(json.dumps({'msg':msg,'test':1,'totalnum':totalnum}))
-    return HttpResponse(json.dumps({'msg':''}))
+        rate = '100%' if minvalue < 0.2 else str(int((1.2-1*minvalue) * 100))+'%'
+        humword = random.choice(humwords)
+        msg = [{'img':'https://www.liyuanye.club'+'/static/' + name,'rate':rate,'humword':humword}]
+        return HttpResponse(json.dumps({'signal':'success','msg':msg,'test':1,'totalnum':totalnum}))
+    msg = [{'img': 'https://www.liyuanye.club'+'/static/avatar/nickyoung.jpg','humword':'你太好看了,匹配不到~', 'rate': 'X'}]
+    return HttpResponse(json.dumps({'signal':'false','msg':msg}))
 
 
 import requests
@@ -799,3 +820,69 @@ def dopupdatethumbup(request):
         return HttpResponse('ok')
     else:
         return HttpResponse('wrong')
+
+
+
+
+import random
+
+percent = ['66%','77%','88%','99%']
+prankhumwords = ['哈哈,翻出了你的旧照','终于知道你像啥了','这是你上辈子模样']
+@csrf_exempt
+def prankuploadimg(request):
+
+
+    a = request.FILES['file']
+    print(time.time())
+    userid = request.POST['userid']
+
+    avatar = request.POST['avatar']
+    response = urllib2.urlopen(avatar)
+    cat_img = response.read()
+
+    with open(cwd+'/static/avatar/'+str(userid)+'.jpg', 'wb') as f:
+        f.write(cat_img)
+
+    if userid == '[object Null]':
+        return HttpResponse('userid is not avaiable')
+    print(time.time())
+    nickname = request.POST['nickname']
+
+    # save raw photo
+    timefix = datetime.datetime.now().strftime('%m-%d %H:%M:%S')
+    picname = cwd + '/static/' + str(userid)+'-'+timefix + '.jpg'
+    with open(picname, 'wb') as f1:
+        for i in a.chunks():
+            f1.write(i)
+    print(time.time())
+    #check if there is head
+    face_locations = face_recognition.load_image_file(picname)
+    tmp=face_recognition.face_encodings(face_locations)
+    if not tmp:
+        return HttpResponse(json.dumps({'msg': 'no head'}))
+
+    personcheck = dopUsers.objects.filter(wxid=userid)  # 如果人脸识别库中的knownimage过多,会影响识别速度
+    if not personcheck:
+        dopUsers(wxid=str(userid), nichname=str(nickname), headpath=str(picname)
+                 # ,simpleheadpath=str(linepicname)
+                 ).save()
+
+    else:
+
+        personcheck.update(headpath=picname
+                           # ,simpleheadpath=linepicname
+                           )
+
+    face_encoding = tmp[0]
+    persons = dopUsers.objects.filter(~Q(wxid = userid),inuse=1)
+    with open(cwd + '/static/minihead/all_face_encodings.pkl','rb') as f:
+        all_face_encodings = pickle.load(f)
+
+    with open(cwd + '/static/minihead/all_face_encodings.pkl','wb') as f:
+        all_face_encodings[userid]=tmp
+        pickle.dump(all_face_encodings,f)
+    name = str(random.randint(0,1))
+    rate = random.choice(percent)
+    humword = random.choice(prankhumwords)
+    msg = [{'img':'https://www.liyuanye.club'+'/static/prank/' + name+'.jpg','rate':rate,'humword':humword}]
+    return HttpResponse(json.dumps({'msg':msg,'test':1}))
