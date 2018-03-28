@@ -881,7 +881,7 @@ def prankuploadimg(request):
     with open(cwd + '/static/minihead/all_face_encodings.pkl','wb') as f:
         all_face_encodings[userid]=tmp
         pickle.dump(all_face_encodings,f)
-    name = str(random.randint(0,1))
+    name = str(random.randint(0,14))
     rate = random.choice(percent)
     humword = random.choice(prankhumwords)
     msg = [{'img':'https://www.liyuanye.club'+'/static/prank/' + name+'.jpg','rate':rate,'humword':humword}]
