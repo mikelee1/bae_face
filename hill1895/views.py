@@ -637,7 +637,7 @@ import urllib2
 
 
 
-humwords = ['这也太像了','简直双胞胎']
+humwords = ['简直双胞胎','网络一线牵，珍惜这段缘']
 @csrf_exempt
 def dopuploadimg(request):
     if headdoor:
@@ -687,15 +687,17 @@ def dopuploadimg(request):
     avatar = request.POST['avatar']
     response = urllib2.urlopen(avatar)
     cat_img = response.read()
+    try:
+        with open(cwd+'/static/avatar/'+str(userid)+'.jpg', 'wb') as f:
+            f.write(cat_img)
+    except:
+        return HttpResponse(json.dumps({'msg': '400'}))
 
-    with open(cwd+'/static/avatar/'+str(userid)+'.jpg', 'wb') as f:
-        f.write(cat_img)
 
 
 
 
-    if userid == '[object Null]':
-        return HttpResponse('userid is not avaiable')
+
     print(time.time())
     nickname = request.POST['nickname']
     known_face_names = []
@@ -771,11 +773,15 @@ def dopuploadimg(request):
 
         print(minvalue)
         name = known_face_names[firstindex]
-        rate = '100%' if minvalue < 0.2 else str(int((1.2-1*minvalue) * 100))+'%'
+        value = int((1.2-1*minvalue) * 100)
+        rate = '100%' if minvalue < 0.2 else str(value)+'%'
         humword = random.choice(humwords)
+        if value<75:
+            humword = '不咋像?换一张试试~'
         msg = [{'img':'https://www.liyuanye.club'+'/static/' + name,'rate':rate,'humword':humword}]
         return HttpResponse(json.dumps({'signal':'success','msg':msg,'test':1,'totalnum':totalnum}))
-    msg = [{'img': 'https://www.liyuanye.club'+'/static/avatar/nickyoung.jpg','humword':'你太好看了,匹配不到~', 'rate': 'X'}]
+    msg = [{'img': 'https://www.liyuanye.club'+'/static/avatar/nickyoung.jpg','humword':
+        random.choice(['你太好看了,匹配不到~','识别不出来，嘤嘤嘤']), 'rate': 'X'}]
     return HttpResponse(json.dumps({'signal':'false','msg':msg}))
 
 
@@ -827,7 +833,7 @@ def dopupdatethumbup(request):
 import random
 
 percent = ['66%','77%','88%','99%']
-prankhumwords = ['哈哈,翻出了你的旧照','终于知道你像啥了','这是你上辈子模样']
+prankhumwords = ['哈哈,翻出了你的旧照','终于知道你像啥了','怎么能这么可爱？','原来你这么旺！汪汪汪','它是你的小可爱吗？','它也是个单身狗']
 @csrf_exempt
 def prankuploadimg(request):
 
@@ -840,8 +846,15 @@ def prankuploadimg(request):
     response = urllib2.urlopen(avatar)
     cat_img = response.read()
 
-    with open(cwd+'/static/avatar/'+str(userid)+'.jpg', 'wb') as f:
-        f.write(cat_img)
+
+
+    try:
+        with open(cwd+'/static/avatar/'+str(userid)+'.jpg', 'wb') as f:
+            f.write(cat_img)
+    except:
+        return HttpResponse(json.dumps({'msg': '400'}))
+
+
 
     if userid == '[object Null]':
         return HttpResponse('userid is not avaiable')
@@ -884,5 +897,7 @@ def prankuploadimg(request):
     name = str(random.randint(0,14))
     rate = random.choice(percent)
     humword = random.choice(prankhumwords)
+    if name == '10':
+        humword = '噗,天蓬元帅也来凑热闹'
     msg = [{'img':'https://www.liyuanye.club'+'/static/prank/' + name+'.jpg','rate':rate,'humword':humword}]
     return HttpResponse(json.dumps({'msg':msg,'test':1}))

@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e537114e-63d1-4110-bd10-9af1177c5153" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/hill1895/views.py" afterPath="$PROJECT_DIR$/hill1895/views.py" />
-      <change beforePath="$PROJECT_DIR$/static/avatar/oeIUL0TjnxJTkGbwIKrMppkZ4MKc.jpg" afterPath="$PROJECT_DIR$/static/avatar/oeIUL0TjnxJTkGbwIKrMppkZ4MKc.jpg" />
-      <change beforePath="$PROJECT_DIR$/static/avatar/oeIUL0alwocixq3zEa1m9VoDywVY.jpg" afterPath="$PROJECT_DIR$/static/avatar/oeIUL0alwocixq3zEa1m9VoDywVY.jpg" />
       <change beforePath="$PROJECT_DIR$/static/minihead/all_face_encodings.pkl" afterPath="$PROJECT_DIR$/static/minihead/all_face_encodings.pkl" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,18 +18,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hill1895/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
-              <caret line="880" column="66" lean-forward="false" selection-start-line="880" selection-start-column="66" selection-end-line="880" selection-end-column="66" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mysite/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="62" column="23" lean-forward="false" selection-start-line="62" selection-start-column="23" selection-end-line="62" selection-end-column="23" />
+            <state relative-caret-position="351">
+              <caret line="776" column="23" lean-forward="true" selection-start-line="776" selection-start-column="23" selection-end-line="776" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -80,18 +69,18 @@
         <option value="$PROJECT_DIR$/mysite/validators.py" />
         <option value="$PROJECT_DIR$/templates/doplogin.html" />
         <option value="$PROJECT_DIR$/templates/face_recog.html" />
-        <option value="/usr/local/lib/python2.7/dist-packages/face_recognition/api.py" />
         <option value="$PROJECT_DIR$/mysite/settings.py" />
         <option value="$PROJECT_DIR$/hill1895/models.py" />
         <option value="$PROJECT_DIR$/hill1895/data00.txt" />
         <option value="$PROJECT_DIR$/hill1895/del.py" />
         <option value="$PROJECT_DIR$/hill1895/scrapbaidupicture.py" />
         <option value="$PROJECT_DIR$/mysite/urls.py" />
+        <option value="/usr/local/lib/python2.7/dist-packages/face_recognition/api.py" />
         <option value="$PROJECT_DIR$/hill1895/views.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="64" />
     <option name="y" value="-11" />
     <option name="width" value="1857" />
@@ -126,6 +115,11 @@
             <path>
               <item name="bae_face" type="b2602c69:ProjectViewProjectNode" />
               <item name="bae_face" type="462c0819:PsiDirectoryNode" />
+              <item name="hill1895" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bae_face" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bae_face" type="462c0819:PsiDirectoryNode" />
               <item name="mysite" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -138,6 +132,12 @@
               <item name="bae_face" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
               <item name="avatar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bae_face" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bae_face" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="prank" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -266,7 +266,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="-11" width="1857" height="1092" extended-state="7" />
+    <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30349344" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -278,7 +278,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29319373" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29319373" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -336,12 +336,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/hill1895/views.py</url>
-          <line>768</line>
+          <line>770</line>
           <option name="timeStamp" value="155" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/hill1895/views.py</url>
-          <line>711</line>
+          <line>713</line>
           <option name="timeStamp" value="156" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -351,7 +351,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/hill1895/views.py</url>
-          <line>705</line>
+          <line>707</line>
           <option name="timeStamp" value="160" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -366,7 +366,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/hill1895/views.py</url>
-          <line>836</line>
+          <line>842</line>
           <option name="timeStamp" value="168" />
         </line-breakpoint>
       </breakpoints>
@@ -428,19 +428,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/hill1895/pachongimgs/231238370.jpg" />
-    <entry file="file://$PROJECT_DIR$/hill1895/pachongimgs/231404686.jpg" />
-    <entry file="file://$PROJECT_DIR$/hill1895/pachongimgs/231464253.jpg" />
-    <entry file="file://$PROJECT_DIR$/hill1895/pachongimgs/231536699.jpg" />
-    <entry file="file://$PROJECT_DIR$/hill1895/pachongimgs/231559897.jpg" />
-    <entry file="file://$PROJECT_DIR$/hill1895/pachongimgs/231623437.jpg" />
-    <entry file="file://$PROJECT_DIR$/hill1895/pachongimgs/231941224.jpg" />
-    <entry file="file://$PROJECT_DIR$/hill1895/pachongimgs/232038224.jpg" />
-    <entry file="file://$PROJECT_DIR$/hill1895/pachongimgs/232108096.jpg" />
-    <entry file="file://$PROJECT_DIR$/hill1895/pachongimgs/232138807.jpg" />
-    <entry file="file://$PROJECT_DIR$/hill1895/pachongimgs/232169185.jpg" />
-    <entry file="file://$PROJECT_DIR$/hill1895/pachongimgs/232198520.jpg" />
-    <entry file="file://$PROJECT_DIR$/hill1895/pachongimgs/232218184.jpg" />
     <entry file="file://$PROJECT_DIR$/hill1895/pachongimgs/232275338.jpg" />
     <entry file="file://$PROJECT_DIR$/hill1895/pachongimgs/238240266.jpg" />
     <entry file="file://$PROJECT_DIR$/hill1895/pachongimgs/238389591.jpg" />
@@ -540,10 +527,78 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/static/prank/1.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/prank/3.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/prank/5.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/prank/6.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/prank/7.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/prank/11.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/prank/9.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/prank/8.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/prank/10.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/prank/0.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/prank/4.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/prank/2.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/face_recognition/api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="727">
+          <caret line="213" column="35" lean-forward="true" selection-start-line="213" selection-start-column="35" selection-end-line="213" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/hill1895/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="880" column="66" lean-forward="false" selection-start-line="880" selection-start-column="66" selection-end-line="880" selection-end-column="66" />
+        <state relative-caret-position="351">
+          <caret line="776" column="23" lean-forward="true" selection-start-line="776" selection-start-column="23" selection-end-line="776" selection-end-column="23" />
           <folding />
         </state>
       </provider>
