@@ -693,11 +693,6 @@ def dopuploadimg(request):
     except:
         return HttpResponse(json.dumps({'msg': '400'}))
 
-
-
-
-
-
     print(time.time())
     nickname = request.POST['nickname']
     known_face_names = []
